@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .bg-outline {
+    @apply bg-light-outline dark:bg-dark-outline;
+  }
+  .text-on-background {
+    @apply text-light-on-background dark:text-dark-on-background;
+  }
+  .bg-background {
+    @apply bg-light-background dark:bg-dark-background text-on-background;
+  }
+  .text-primary {
+    @apply text-light-primary dark:text-dark-primary;
+  }
+  .text-on-primary {
+    @apply text-light-on-primary dark:text-dark-on-primary;
+  }
+  .bg-primary {
+    @apply bg-light-primary dark:bg-dark-primary text-on-primary;
+  }
+
+  header,
+  main > section {
+    @apply py-8;
+  }
+  header > *,
+  main > section > * {
+    @apply container;
+  }
+  h3 {
+    @apply mb-4 text-3xl;
+  }
+  a {
+    @apply text-primary;
+  }
+  p {
+    @apply mt-4 max-w-[70ch];
+  }
+  section > article {
+    @apply relative;
+  }
+  section > article:not(:last-child) {
+    @apply pb-8 my-8 after:content-[""] after:absolute after:left-1/4 after:block after:bottom-0 after:h-[1px] after:w-1/2 after:bg-outline after:rounded-full;
+  }
+  section > article:first-child {
+    @apply mt-0;
+  }
+}
