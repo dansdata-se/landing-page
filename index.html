@@ -79,6 +79,15 @@
     />
   </head>
   <body class="bg-background">
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0"
+      nonce="0AUDcK3l"
+    ></script>
+
     <header
       class="flex flex-col justify-end min-h-[70vh] bg-vargarda1200w sm:bg-vargarda bg-cover bg-center bg-blend-multiply bg-[rgba(0,0,0,0.5)]"
     >
@@ -91,11 +100,24 @@
       <section>
         <article>
           <h3>Vad är dansdata.se?</h3>
-          <img
-            class="sm:float-right max-h-52 mx-auto sm:ml-4 mb-4 md:max-w-1/3 bg-white rounded-[25%] shadow-md"
-            src="src/logo.webp"
-            alt="dansdatas logotyp - en siluett av ett dansande par"
-          />
+          <div
+            class="fb-page block sm:float-right mx-auto sm:ml-4 mb-4 max-w-full sm:max-w-[50%] w-[340px]"
+            data-href="https://www.facebook.com/DansdataSE"
+            data-tabs=""
+            data-width="340"
+            data-height=""
+            data-small-header="false"
+            data-adapt-container-width="true"
+            data-hide-cover="false"
+            data-show-facepile="true"
+          >
+            <blockquote
+              cite="https://www.facebook.com/DansdataSE"
+              class="fb-xfbml-parse-ignore"
+            >
+              <a href="https://www.facebook.com/DansdataSE">Dansdata</a>
+            </blockquote>
+          </div>
           <p>
             Dansdata.se är en kommande,
             <a href="https://it-ord.idg.se/ord/crowdsourcing/">crowdsourcad</a>,
@@ -160,5 +182,9 @@
       <p class="mt-0 mx-auto">&copy; 2022 Dansdata.se</p>
       <p class="mx-auto">Vi vet när Sverige dansar!</p>
     </footer>
+    <script
+      type="module"
+      src="/src/index.ts"
+    ></script>
   </body>
 </html>
