@@ -1,0 +1,50 @@
+:root {
+  --color-outline: 111, 121, 123;
+  @media (prefers-color-scheme: dark) {
+    --color-outline: 137, 146, 149;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /*
+   * Workaround to allow proper bottom positioning for fixed
+   * elements in mobile browsers with collapsing url bars:
+   * https://stackoverflow.com/a/17555766/1137077
+   */
+  :root,
+  html,
+  body {
+    @apply h-full min-h-full bg-base-200 text-base-content;
+  }
+  #__next {
+    @apply h-full min-h-full;
+  }
+}
+
+@layer components {
+  ul {
+    @apply list-inside list-disc ps-4;
+  }
+
+  ul:not(li > ul) {
+    @apply my-[1em];
+  }
+
+  footer {
+    a {
+      @apply text-primary;
+
+      &:hover {
+        @apply text-primary;
+        text-decoration: underline;
+      }
+      &:visited {
+        @apply text-primary;
+      }
+    }
+  }
+}

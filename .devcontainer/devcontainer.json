@@ -1,0 +1,24 @@
+{
+  "name": "Dansdata Landing Page",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces/dansdata/landing_page",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "nodeGypDependencies": true,
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/docker-outside-of-docker": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "csstools.postcss",
+        "bradlc.vscode-tailwindcss",
+        "Orta.vscode-jest"
+      ]
+    }
+  },
+  "postCreateCommand": "sudo chmod +x .devcontainer/post_create.sh && exec .devcontainer/post_create.sh"
+}
