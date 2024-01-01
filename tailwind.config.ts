@@ -10,6 +10,14 @@ const config: Config = {
     extend: {
       colors: {
         outline: "rgba(var(--color-outline), <alpha-value>)",
+        "primary-container":
+          "rgba(var(--color-primary-container), <alpha-value>)",
+        "primary-container-content":
+          "rgba(var(--color-on-primary-container), <alpha-value>)",
+        "tertiary-container":
+          "rgba(var(--color-tertiary-container), <alpha-value>)",
+        "tertiary-container-content":
+          "rgba(var(--color-on-tertiary-container), <alpha-value>)",
       },
     },
     container: {

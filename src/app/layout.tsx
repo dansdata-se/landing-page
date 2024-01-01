@@ -4,6 +4,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import classNames from "classnames";
 import type { Metadata } from "next";
+import { OpenGraph } from "next/dist/lib/metadata/types/opengraph-types";
+import { Twitter } from "next/dist/lib/metadata/types/twitter-types";
 import { Norican, Roboto_Flex } from "next/font/google";
 
 const norican = Norican({
@@ -20,9 +22,35 @@ const robotoFlex = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dansdata.se"),
   title: "Dansdata | Vi vet när Sverige dansar!",
   description:
     "Dansdata är en kommande informationskälla för svensk dansinformation.",
+  alternates: {
+    canonical: "/",
+  },
+  get openGraph(): OpenGraph {
+    return {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      title: this.title!,
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      description: this.description!,
+      type: "website",
+      images: "/maskable_icon_x512.png",
+      siteName: "Dansdata",
+      url: this.metadataBase?.toString(),
+    };
+  },
+  get twitter(): Twitter {
+    return {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      title: this.title!,
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      description: this.description!,
+      images: this.openGraph?.images,
+      card: "summary",
+    };
+  },
 };
 
 export default function RootLayout({
